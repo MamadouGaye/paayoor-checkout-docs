@@ -5,9 +5,9 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#9563FF",
+    "primary": "#6576ff",
     "light": "#AE87FF",
     "dark": "#0D001D",
     "background": {
@@ -15,13 +15,13 @@
     },
     "anchors": {
       "from": "#FF7F57",
-      "to": "#9563FF"
+      "to": "#6576ff"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "gayemama9@gmail.com"
     }
   ],
   "topbarCtaButton": {
