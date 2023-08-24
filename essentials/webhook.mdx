@@ -1,0 +1,17 @@
+---
+title: 'Webhook'
+description: ''
+icon: 'webhook'
+---
+
+Différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
+A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+
+Le format de données envoyé peut etre différent selon l'operation(Collect, Disbursement, Transfer, Recharge et Withdraw):
+
+- Collect ([Voir format de données](http://localhost:9090/api-overview/collect#webhook))
+- Disbursement ([Voir format de données](http://localhost:9090/api-overview/disbursement#webhook))
+- Transfer ([Voir format de données](http://localhost:9090/api-overview/transfer#webhook))
+- Recharge ([Voir format de données](http://localhost:9090/api-overview/recharge#webhook))
+- Withdraw ([Voir format de données](http://localhost:9090/api-overview/withdraw#webhook))
+

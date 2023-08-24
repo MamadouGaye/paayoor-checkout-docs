@@ -8,8 +8,8 @@
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#6576ff",
-    "light": "#AE87FF",
-    "dark": "#0D001D",
+    "light": "#6576ff",
+    "dark": "#6576ff",
     "background": {
       "dark": "#090014"
     },
@@ -34,43 +34,69 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
+  "anchors": [],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["get-started/introduction", "get-started/quickstart"]
+    },
+    {
+      "group": "API Overview",
+      "pages": ["api-overview/balance", "api-overview/collect", "api-overview/disbursement", "api-overview/transfer", "api-overview/recharge", "api-overview/withdraw", "api-overview/transaction"]
     },
     {
       "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": ["essentials/country", "essentials/channel", "essentials/environment", "essentials/response-code", "essentials/webhook"]
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": ["api-reference/authentication", "api-reference/environment"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Balance Endpoint",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/get-balance"
+      ]
+    },
+    {
+      "group": "Collect Endpoint",
+      "pages": [
+        "api-reference/endpoint/post-collect",
+        "api-reference/endpoint/get-collect"
+      ]
+    },
+    {
+      "group": "Disbursement Endpoint",
+      "pages": [
+        "api-reference/endpoint/post-disbursement",
+        "api-reference/endpoint/get-disbursement"
+      ]
+    },
+    {
+      "group": "Transfer Endpoint",
+      "pages": [
+        "api-reference/endpoint/post-transfer",
+        "api-reference/endpoint/get-transfer"
+      ]
+    },
+    {
+      "group": "Recharge Endpoint",
+      "pages": [
+        "api-reference/endpoint/post-recharge",
+        "api-reference/endpoint/get-recharge"
+      ]
+    },
+    {
+      "group": "Withdraw Endpoint",
+      "pages": [
+        "api-reference/endpoint/post-withdraw",
+        "api-reference/endpoint/get-withdraw"
+      ]
+    },
+    {
+      "group": "Transaction Endpoint",
+      "pages": [
+        "api-reference/endpoint/get-transaction"
       ]
     }
   ],

@@ -1,0 +1,61 @@
+---
+title: Transfer
+description: "Transfer Management"
+---
+
+L'API Transfer vous permet de transférer de l'argent d'un compte d'un canal disponible vers un autre compte d'un cannal disponible.
+
+## Flow
+
+L'argent est débité du compte Mobile money / Bancaire emmeteur vers un compte Mobile money / Bancaire receveur.
+
+## Endpoints
+
+Vous avez les endpoints suivants qui sont disponibles:
+
+- Soumission d'un transfert ([API Référence](https://auth.paayoor.com/register))
+- Recupération de la liste des transferts ([API Référence](https://auth.paayoor.com/register))
+
+## Cannaux disponibles
+
+Les canneaux disponibles pour tranfert:
+
+| Countries | Channels Emetteurs                  | Channels Receveurs                  | 
+| --------- | ----------------------------------- | ----------------------------------- |
+| Senegal   | `Orange Money`  `Wave` `Free Money` | `Orange Money`  `Wave` `Free Money` |
+
+## Webhook
+
+Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
+A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+
+Ci-dessous le format JSON envoyé:
+
+```json
+{
+    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
+    "from": {
+        "amount": 1000,
+        "status": "succeeded",
+        "pricing": {
+            "percentageFee": 1.5,
+            "padditionalFee": 100,
+            "supportedByAccount": true,
+        },
+        "feesAmount": 150,
+    },
+    "to": {
+        "amount": 1000,
+        "status": "succeeded",
+        "pricing": {
+            "percentageFee": 1.5,
+            "padditionalFee": 100,
+            "supportedByAccount": true,
+        },
+        "feesAmount": 150,
+    },
+    "merchantReference": "PYR220823.CLT1637.65321",
+    "initiationDate": "2023-08-22 16:37:26"
+}
+```
+

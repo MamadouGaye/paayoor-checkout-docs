@@ -1,0 +1,49 @@
+---
+title: Withdraw
+description: "Withdraw Management"
+---
+
+L'API Withdraw vous permet de retirer de l'argent de son compte Paayoor vers les différents cannaux disponibles.
+
+## Flow
+
+L'argent est débité du compte Paayoor pour l'envoyer à un compte Mobile money / Bancaire.
+
+## Endpoints
+
+Vous avez les endpoints suivants qui sont disponibles:
+
+- Soumission d'un retrait ([API Référence](https://auth.paayoor.com/register))
+- Recupération de la liste des retraits ([API Référence](https://auth.paayoor.com/register))
+
+## Cannaux disponibles
+
+Les canneaux disponibles pour retrait:
+
+| Countries | Channels         |
+| --------- | ---------------- |
+| Senegal   | `Orange Money`  `Wave` `Free Money` |
+
+## Webhook
+
+Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
+A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+
+Ci-dessous le format JSON envoyé:
+
+```json
+{
+    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
+    "amount": 1000,
+    "status": "succeeded",
+    "pricing": {
+        "percentageFee": 1.5,
+        "padditionalFee": 100,
+        "supportedByAccount": true,
+    },
+    "feesAmount": 150,
+    "merchantReference": "PYR220823.CLT1637.65321",
+    "initiationDate": "2023-08-22 16:37:26"
+}
+```
+

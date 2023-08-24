@@ -1,0 +1,49 @@
+---
+title: Recharge
+description: "Recharge Management"
+---
+
+L'API Recharge vous permet de recharge le compte Paayoor via les différents cannaux disponibles.
+
+## Flow
+
+L'argent est débité du compte Mobile money / Bancaire pour le positionner dans le compte Paayoor.
+
+## Endpoints
+
+Vous avez les endpoints suivants qui sont disponibles:
+
+- Soumission d'une recharge ([API Référence](https://auth.paayoor.com/register))
+- Recupération de la liste des recharges ([API Référence](https://auth.paayoor.com/register))
+
+## cannaux disponibles
+
+Les canneaux disponibles pour recharge:
+
+| Countries | Channels         |
+| --------- | ---------------- |
+| Senegal   | `Orange Money`  `Wave` `Free Money` |
+
+## Webhook
+
+Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
+A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+
+Ci-dessous le format JSON envoyé:
+
+```json
+{
+    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
+    "amount": 1000,
+    "status": "succeeded",
+    "pricing": {
+        "percentageFee": 1.5,
+        "padditionalFee": 100,
+        "supportedByAccount": true,
+    },
+    "feesAmount": 150,
+    "merchantReference": "PYR220823.CLT1637.65321",
+    "initiationDate": "2023-08-22 16:37:26"
+}
+```
+
