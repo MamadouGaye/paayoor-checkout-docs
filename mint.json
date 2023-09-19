@@ -109,11 +109,5 @@
     "twitter": "https://twitter.com/mintlify",
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
-  },
-  "api": {
-    "baseUrl": "https://api.checkout.paayoor.com/api",
-    "playground": {
-      "mode": "show"
-    }
-  } 
+  }
 }
