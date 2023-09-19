@@ -15,6 +15,7 @@ Vous avez les endpoints suivants qui sont disponibles:
 
 - Soumission d'un déboursement ([API Référence](https://auth.paayoor.com/register))
 - Recupération de la liste des déboursements ([API Référence](https://auth.paayoor.com/register))
+- Voir les détails d'un déboursement ([API Référence](https://auth.paayoor.com/register))
 
 ## Cannaux disponibles
 
@@ -22,7 +23,7 @@ Les canneaux disponibles pour Disbursement:
 
 | Countries | Channels         |
 | --------- | ---------------- |
-| Senegal   | `Orange Money`  `Wave` `Free Money` |
+| Senegal   | `Wave`           |
 
 ## Webhook
 
@@ -33,17 +34,20 @@ Ci-dessous le format JSON envoyé:
 
 ```json
 {
-    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
-    "amount": 1000,
+    "operation": "disbursement",
+    "token": "e1yt9-xmitj-2ngzi-7qjjp-ngqr1",
     "status": "succeeded",
+    "amount": 1,
     "pricing": {
-        "percentageFee": 1.5,
-        "padditionalFee": 100,
-        "supportedByAccount": true,
+        "percentageFee": 1.8,
+        "additionalFee": 100,
+        "feesAmount": 101,
+        "supportedByAccount": true
     },
-    "feesAmount": 150,
-    "merchantReference": "PYR220823.CLT1637.65321",
-    "initiationDate": "2023-08-22 16:37:26"
+    "cashAmount": 1,
+    "transactionAmount": 102,
+    "merchantReference": "ifkjhiouefjeifjei",
+    "initiationDate": "2023-09-07T10:12:50.000000Z"
 }
 ```
 

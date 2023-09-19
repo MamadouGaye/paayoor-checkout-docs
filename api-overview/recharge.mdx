@@ -15,6 +15,7 @@ Vous avez les endpoints suivants qui sont disponibles:
 
 - Soumission d'une recharge ([API Référence](https://auth.paayoor.com/register))
 - Recupération de la liste des recharges ([API Référence](https://auth.paayoor.com/register))
+- Voir les détails d'une recharge ([API Référence](https://auth.paayoor.com/register))
 
 ## cannaux disponibles
 
@@ -22,7 +23,7 @@ Les canneaux disponibles pour recharge:
 
 | Countries | Channels         |
 | --------- | ---------------- |
-| Senegal   | `Orange Money`  `Wave` `Free Money` |
+| Senegal   | `Wave`           |
 
 ## Webhook
 
@@ -33,17 +34,20 @@ Ci-dessous le format JSON envoyé:
 
 ```json
 {
-    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
-    "amount": 1000,
+    "operation": "recharge",
+    "token": "cchow-wxmbw-jrhl5-fxxk2-mcack",
     "status": "succeeded",
+    "amount": 1000,
     "pricing": {
-        "percentageFee": 1.5,
-        "padditionalFee": 100,
-        "supportedByAccount": true,
+        "percentageFee": 1.8,
+        "additionalFee": 100,
+        "feesAmount": 118,
+        "supportedByAccount": true
     },
-    "feesAmount": 150,
-    "merchantReference": "PYR220823.CLT1637.65321",
-    "initiationDate": "2023-08-22 16:37:26"
+    "cashInAmount": 1000,
+    "transactionAmount": 882,
+    "merchantReference": "efenhudshfuidfjhi",
+    "initiationDate": "2023-09-06T15:02:44.000000Z"
 }
 ```
 

@@ -15,6 +15,7 @@ Vous avez les endpoints suivants qui sont disponibles:
 
 - Soumission d'un transfert ([API Référence](https://auth.paayoor.com/register))
 - Recupération de la liste des transferts ([API Référence](https://auth.paayoor.com/register))
+- Voir les détails d'un transfert ([API Référence](https://auth.paayoor.com/register))
 
 ## Cannaux disponibles
 
@@ -22,7 +23,7 @@ Les canneaux disponibles pour tranfert:
 
 | Countries | Channels Emetteurs                  | Channels Receveurs                  | 
 | --------- | ----------------------------------- | ----------------------------------- |
-| Senegal   | `Orange Money`  `Wave` `Free Money` | `Orange Money`  `Wave` `Free Money` |
+| Senegal   |  `Wave`                             |  `Wave`                             |
 
 ## Webhook
 
@@ -33,29 +34,33 @@ Ci-dessous le format JSON envoyé:
 
 ```json
 {
-    "token": "dhdu-dilsid-dskuid-dkubd-dkjbds",
+    "operation": "transfer",
+    "token": "cum2u-nq8ug-tvguu-2xzxy-vij17",
+    "status": "succeeded",
     "from": {
-        "amount": 1000,
-        "status": "succeeded",
+        "amount": 1,
         "pricing": {
-            "percentageFee": 1.5,
-            "padditionalFee": 100,
-            "supportedByAccount": true,
+            "percentageFee": 1.8,
+            "additionalFee": 100,
+            "feesAmount": 100,
+            "supportedByAccount": true
         },
-        "feesAmount": 150,
+        "cashInAmount": 1,
+        "transactionAmount": -99
     },
     "to": {
-        "amount": 1000,
-        "status": "succeeded",
+        "amount": 1,
         "pricing": {
-            "percentageFee": 1.5,
-            "padditionalFee": 100,
-            "supportedByAccount": true,
+            "percentageFee": 1.8,
+            "additionalFee": 100,
+            "feesAmount": 101,
+            "supportedByAccount": true
         },
-        "feesAmount": 150,
+        "cashAmount": 1,
+        "transactionAmount": 102
     },
-    "merchantReference": "PYR220823.CLT1637.65321",
-    "initiationDate": "2023-08-22 16:37:26"
+    "merchantReference": "ikjiojidosdjiods",
+    "initiationDate": "2023-09-07T09:31:18.000000Z"
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: "Submit Collect"
-api: "POST https://api.checkout.product.paayoor.com/api/collect"
+title: "Collect List"
+api: "GET https://api.checkout.product.paayoor.com/api/collect"
 description: "This endpoint creates a new user"
 ---
 
@@ -12,63 +12,6 @@ description: "This endpoint creates a new user"
 </ParamField>
 
 <ParamField header="secret-key" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-### Body
-
-<ParamField body="amount" type="number" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="channel" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="country" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="phoneNumber" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="merchantReference" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="pendingUrl" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="succeededUrl" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="failedUrl" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="canceledUrl" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="errorUrl" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
-
-<ParamField body="callbackUrl" type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
@@ -93,11 +36,11 @@ description: "This endpoint creates a new user"
 
   <Expandable title="Toggle object">
 
-    <ResponseField name="collect" type="object">
+    <ResponseField name="collects" type="array">
 
       The contents of the user group
 
-      <Expandable title="Toggle object">
+      <Expandable title="Toggle array">
 
         <ResponseField name="operation" type="string">
           This is the internal ID for this user group. You don't need to record this
@@ -172,6 +115,80 @@ description: "This endpoint creates a new user"
 
       </Expandable>
 
+      ...
+
+    </ResponseField>
+
+  </Expandable>
+
+</ResponseField>
+
+<ResponseField name="meta" type="object">
+
+  The contents of the user group
+
+  <Expandable title="Toggle object">
+
+    <ResponseField name="pagination" type="object">
+
+      The contents of the user group
+
+      <Expandable title="Toggle object">
+
+        <ResponseField name="total" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="perPage" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="currentpage" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="firstPage" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="firstPageUrl" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="pages" type="object">
+
+          The contents of the user group
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="number" type="url">
+              This is the internal ID for this user group. You don't need to record this
+              information, since you will not need to use it.
+            </ResponseField>
+
+            ...
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="lastPage" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="lastPageUrl" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+      </Expandable>
+
     </ResponseField>
 
   </Expandable>
@@ -181,22 +198,9 @@ description: "This endpoint creates a new user"
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'http://localhost:89/api/v1/collect' \
+curl --location --request GET 'http://localhost:89/api/v1/collect' \
 --header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
---header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1' \
---data '{
-    "amount": "",
-    "channel": "",
-    "country": "",
-    "phoneNumber": "",
-    "merchantReference": "",
-    "pendingUrl": "",
-    "succeededUrl": "",
-    "failedUrl": "",
-    "canceledUrl": "",
-    "errorUrl": "",
-    "callbackUrl": "",
-}'
+--header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1'
 ```
 
 </RequestExample>
@@ -207,23 +211,40 @@ curl --location --request POST 'http://localhost:89/api/v1/collect' \
 {
   "success": true,
   "statusCode": 200,
-  "message": "Collect !",
+  "message": "Collects !",
   "data": {
-    "collect": {
-      "operation": "collect",
-      "token": "opxbn-isxnc-dkamk-ujtyc-2ytwg",
-      "status": "succeeded",
-      "amount": 1000,
-      "pricing": {
-          "percentageFee": 1.8,
-          "additionalFee": 100,
-          "feesAmount": 118,
-          "supportedByAccount": true
+    "collects": [
+      {
+        "operation": "collect",
+        "token": "opxbn-isxnc-dkamk-ujtyc-2ytwg",
+        "status": "succeeded",
+        "amount": 1000,
+        "pricing": {
+            "percentageFee": 1.8,
+            "additionalFee": 100,
+            "feesAmount": 118,
+            "supportedByAccount": true
+        },
+        "cashInAmount": 1000,
+        "transactionAmount": 882,
+        "merchantReference": "kiufjsknduifdnfz",
+        "initiationDate": "2023-09-06T15:03:45.000000Z"
       },
-      "cashInAmount": 1000,
-      "transactionAmount": 882,
-      "merchantReference": "kiufjsknduifdnfz",
-      "initiationDate": "2023-09-06T15:03:45.000000Z"
+      ...
+    ]
+  },
+  "meta": {
+    "pagination": {
+      "total": 1,
+      "perPage": 10,
+      "currentPage": 1,
+      "firstPage": 1,
+      "firstPageUrl": "http://localhost:89/api/collect?page=1",
+      "pages": {
+          "1": "http://localhost:89/api/collect?page=1"
+      },
+      "lastPage": 1,
+      "lastPageUrl": "http://localhost:89/api/collect?page=1"
     }
   }
 }

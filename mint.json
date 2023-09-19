@@ -62,41 +62,46 @@
       "group": "Collect Endpoint",
       "pages": [
         "api-reference/endpoint/post-collect",
-        "api-reference/endpoint/get-collect"
+        "api-reference/endpoint/get-collect",
+        "api-reference/endpoint/get-collects"
       ]
     },
     {
       "group": "Disbursement Endpoint",
       "pages": [
         "api-reference/endpoint/post-disbursement",
-        "api-reference/endpoint/get-disbursement"
+        "api-reference/endpoint/get-disbursement",
+        "api-reference/endpoint/get-disbursements"
       ]
     },
     {
       "group": "Transfer Endpoint",
       "pages": [
         "api-reference/endpoint/post-transfer",
-        "api-reference/endpoint/get-transfer"
+        "api-reference/endpoint/get-transfer",
+        "api-reference/endpoint/get-transfers"
       ]
     },
     {
       "group": "Recharge Endpoint",
       "pages": [
         "api-reference/endpoint/post-recharge",
-        "api-reference/endpoint/get-recharge"
+        "api-reference/endpoint/get-recharge",
+        "api-reference/endpoint/get-recharges"
       ]
     },
     {
       "group": "Withdraw Endpoint",
       "pages": [
         "api-reference/endpoint/post-withdraw",
-        "api-reference/endpoint/get-withdraw"
+        "api-reference/endpoint/get-withdraw",
+        "api-reference/endpoint/get-withdraws"
       ]
     },
     {
       "group": "Transaction Endpoint",
       "pages": [
-        "api-reference/endpoint/get-transaction"
+        "api-reference/endpoint/get-transactions"
       ]
     }
   ],
@@ -104,5 +109,8 @@
     "twitter": "https://twitter.com/mintlify",
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  },
+  "api": {
+    "baseUrl": "http://localhost:89/api"
+  } 
 }

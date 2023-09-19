@@ -1,68 +1,132 @@
 ---
-title: "Collect List"
-api: "GET https://api.checkout.product.paayoor.com/api/collect"
+title: "Collect Details"
+api: "GET http://localhost:89/api/v1/collect/{token}"
 description: "This endpoint creates a new user"
 ---
 
-### Body
+### Headers
 
-<ParamField body="current_token" type="string">
+<ParamField header="api-key" type="string" required>
+  This is the current user group token you have for the user group that you want
+  to rotate.
+</ParamField>
+
+<ParamField header="secret-key" type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
 ### Response
 
-<ResponseField name="success" type="number">
+<ResponseField name="success" type="boolean">
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="user_group" type="object">
-
-The contents of the user group
-
-<Expandable title="Toggle object">
-
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
+<ResponseField name="statusCode" type="number">
+  Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
+<ResponseField name="message" type="string">
+  Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
+<ResponseField name="data" type="object">
 
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
+  The contents of the user group
 
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
-</ResponseField>
+  <Expandable title="Toggle object">
 
-</Expandable>
+    <ResponseField name="collect" type="object">
+
+      The contents of the user group
+
+      <Expandable title="Toggle object">
+
+        <ResponseField name="operation" type="string">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="token" type="string">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="status" type="string">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="amount" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="pricing" type="object">
+
+          The contents of the user group
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="percentageFee" type="number">
+              This is the internal ID for this user group. You don't need to record this
+              information, since you will not need to use it.
+            </ResponseField>
+
+            <ResponseField name="additionalFee" type="number">
+              This is the internal ID for this user group. You don't need to record this
+              information, since you will not need to use it.
+            </ResponseField>
+
+            <ResponseField name="feesAmount" type="number">
+              This is the internal ID for this user group. You don't need to record this
+              information, since you will not need to use it.
+            </ResponseField>
+
+            <ResponseField name="supportedByAccount" type="bollean">
+              This is the internal ID for this user group. You don't need to record this
+              information, since you will not need to use it.
+            </ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="cashInAmount" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="transactionAmount" type="number">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="merchantReference" type="string">
+          This is the internal ID for this user group. You don't need to record this
+          information, since you will not need to use it.
+        </ResponseField>
+
+        <ResponseField name="initialDate" type="date">
+          This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
+          used to identify which user group is viewing the dashboard. You should save
+          this on your end to use when rendering an embedded dashboard.
+        </ResponseField>
+
+      </Expandable>
+
+    </ResponseField>
+
+  </Expandable>
 
 </ResponseField>
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "current_token": ""
-}'
+```bash cURL
+curl --location --request GET 'http://localhost:89/api/v1/collect/{token}' \
+--header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
+--header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1'
 ```
 
 </RequestExample>
@@ -71,12 +135,26 @@ curl --location --request POST 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
+  "success": true,
+  "statusCode": 200,
+  "message": "Collect !",
+  "data": {
+    "collect": {
+      "operation": "collect",
+      "token": "opxbn-isxnc-dkamk-ujtyc-2ytwg",
+      "status": "succeeded",
+      "amount": 1000,
+      "pricing": {
+          "percentageFee": 1.8,
+          "additionalFee": 100,
+          "feesAmount": 118,
+          "supportedByAccount": true
+      },
+      "cashInAmount": 1000,
+      "transactionAmount": 882,
+      "merchantReference": "kiufjsknduifdnfz",
+      "initiationDate": "2023-09-06T15:03:45.000000Z"
+    }
   }
 }
 ```
