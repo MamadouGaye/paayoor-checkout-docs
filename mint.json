@@ -111,6 +111,9 @@
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
   "api": {
-    "baseUrl": "http://localhost:89/api"
+    "baseUrl": "http://localhost:89/api",
+    "playground": {
+      "mode": "show"
+    }
   } 
 }
