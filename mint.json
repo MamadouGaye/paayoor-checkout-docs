@@ -111,7 +111,7 @@
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
   "api": {
-    "baseUrl": "http://localhost:89/api",
+    "baseUrl": "https://api.checkout.paayoor.com/api",
     "playground": {
       "mode": "show"
     }
