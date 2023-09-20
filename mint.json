@@ -49,17 +49,17 @@
       "pages": ["essentials/country", "essentials/channel", "essentials/environment", "essentials/response-code", "essentials/webhook"]
     },
     {
-      "group": "API Documentation",
+      "group": "Généralité",
       "pages": ["api-reference/authentication", "api-reference/environment"]
     },
     {
-      "group": "Balance Endpoint",
+      "group": "Solde Compte",
       "pages": [
         "api-reference/endpoint/get-balance"
       ]
     },
     {
-      "group": "Collect Endpoint",
+      "group": "Collecte",
       "pages": [
         "api-reference/endpoint/post-collect",
         "api-reference/endpoint/get-collect",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "group": "Disbursement Endpoint",
+      "group": "Déboursement",
       "pages": [
         "api-reference/endpoint/post-disbursement",
         "api-reference/endpoint/get-disbursement",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "group": "Transfer Endpoint",
+      "group": "Transfert",
       "pages": [
         "api-reference/endpoint/post-transfer",
         "api-reference/endpoint/get-transfer",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "group": "Recharge Endpoint",
+      "group": "Recharge",
       "pages": [
         "api-reference/endpoint/post-recharge",
         "api-reference/endpoint/get-recharge",
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "group": "Withdraw Endpoint",
+      "group": "Retrait",
       "pages": [
         "api-reference/endpoint/post-withdraw",
         "api-reference/endpoint/get-withdraw",
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "group": "Transaction Endpoint",
+      "group": "Transaction",
       "pages": [
         "api-reference/endpoint/get-transactions"
       ]
