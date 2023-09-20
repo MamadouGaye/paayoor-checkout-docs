@@ -1,57 +1,34 @@
 ---
 title: "Get balance"
-api: "GET http://localhost:89/api/v1/balance"
-description: "Cet endpoint vous donne le solde courant"
+api: "GET https://api.checkout.paayoor.com/api/v1/balance"
+description: "Cet endpoint vous donne le solde courant du compte Paayoor Checkout"
 ---
 
-### Headers
+### Header
 
-<ParamField header="api-key" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+<ParamField header="api-key" type="string" required></ParamField>
 
-<ParamField header="secret-key" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+<ParamField header="secret-key" type="string" required></ParamField>
 
 ### Response
 
-<ResponseField name="success" type="boolean">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="success" type="boolean"></ResponseField>
 
-<ResponseField name="statusCode" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="statusCode" type="number"></ResponseField>
 
-<ResponseField name="message" type="string">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="message" type="string"></ResponseField>
 
 <ResponseField name="data" type="object">
-
-  The contents of the user group
 
   <Expandable title="Toggle object">
 
     <ResponseField name="balance" type="object">
 
-      The contents of the user group
-
       <Expandable title="Toggle object">
 
-        <ResponseField name="amount" type="number">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="amount" type="number"></ResponseField>
 
-        <ResponseField name="date" type="date">
-          This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-          used to identify which user group is viewing the dashboard. You should save
-          this on your end to use when rendering an embedded dashboard.
-        </ResponseField>
+        <ResponseField name="date" type="date"></ResponseField>
 
       </Expandable>
 
@@ -64,7 +41,7 @@ description: "Cet endpoint vous donne le solde courant"
 <RequestExample>
 
 ```bash cURL
-curl --location --request GET 'http://localhost:89/api/v1/balance' \
+curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/balance' \
 --header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
 --header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1' \
 ```

@@ -1,117 +1,66 @@
 ---
 title: "Collect Details"
-api: "GET http://localhost:89/api/v1/collect/{token}"
-description: "This endpoint creates a new user"
+api: "GET https://api.checkout.paayoor.com/api/v1/collect/{token}"
+description: "Cet endpoint vous permet de voir les détails d'une collecte"
 ---
 
-### Headers
+### Path
 
-<ParamField header="api-key" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+<ParamField path="token" type="string" required></ParamField>
 
-<ParamField header="secret-key" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+### Header
+
+<ParamField header="api-key" type="string" required></ParamField>
+
+<ParamField header="secret-key" type="string" required></ParamField>
 
 ### Response
 
-<ResponseField name="success" type="boolean">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="success" type="boolean"></ResponseField>
 
-<ResponseField name="statusCode" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="statusCode" type="number"></ResponseField>
 
-<ResponseField name="message" type="string">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="message" type="string"></ResponseField>
 
 <ResponseField name="data" type="object">
-
-  The contents of the user group
 
   <Expandable title="Toggle object">
 
     <ResponseField name="collect" type="object">
 
-      The contents of the user group
-
       <Expandable title="Toggle object">
 
-        <ResponseField name="operation" type="string">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="operation" type="string"></ResponseField>
 
-        <ResponseField name="token" type="string">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="token" type="string"></ResponseField>
 
-        <ResponseField name="status" type="string">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="status" type="string"></ResponseField>
 
-        <ResponseField name="amount" type="number">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="amount" type="number"></ResponseField>
 
         <ResponseField name="pricing" type="object">
 
-          The contents of the user group
-
           <Expandable title="Toggle object">
 
-            <ResponseField name="percentageFee" type="number">
-              This is the internal ID for this user group. You don't need to record this
-              information, since you will not need to use it.
-            </ResponseField>
+            <ResponseField name="percentageFee" type="number"></ResponseField>
 
-            <ResponseField name="additionalFee" type="number">
-              This is the internal ID for this user group. You don't need to record this
-              information, since you will not need to use it.
-            </ResponseField>
+            <ResponseField name="additionalFee" type="number"></ResponseField>
 
-            <ResponseField name="feesAmount" type="number">
-              This is the internal ID for this user group. You don't need to record this
-              information, since you will not need to use it.
-            </ResponseField>
+            <ResponseField name="feesAmount" type="number"></ResponseField>
 
-            <ResponseField name="supportedByAccount" type="bollean">
-              This is the internal ID for this user group. You don't need to record this
-              information, since you will not need to use it.
-            </ResponseField>
+            <ResponseField name="supportedByAccount" type="bollean"></ResponseField>
 
           </Expandable>
 
         </ResponseField>
 
-        <ResponseField name="cashInAmount" type="number">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="cashInAmount" type="number"></ResponseField>
 
-        <ResponseField name="transactionAmount" type="number">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="transactionAmount" type="number"></ResponseField>
 
-        <ResponseField name="merchantReference" type="string">
-          This is the internal ID for this user group. You don't need to record this
-          information, since you will not need to use it.
-        </ResponseField>
+        <ResponseField name="merchantReference" type="string"></ResponseField>
 
-        <ResponseField name="initialDate" type="date">
-          This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-          used to identify which user group is viewing the dashboard. You should save
-          this on your end to use when rendering an embedded dashboard.
-        </ResponseField>
+        <ResponseField name="initialDate" type="date"></ResponseField>
 
       </Expandable>
 
@@ -124,7 +73,7 @@ description: "This endpoint creates a new user"
 <RequestExample>
 
 ```bash cURL
-curl --location --request GET 'http://localhost:89/api/v1/collect/{token}' \
+curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/collect/{token}' \
 --header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
 --header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1'
 ```

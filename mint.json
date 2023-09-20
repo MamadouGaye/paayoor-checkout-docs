@@ -26,7 +26,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://checkout.paayoor.com"
   },
   "tabs": [
     {
@@ -106,8 +106,8 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/paayoor",
+    "github": "https://github.com/paayoor",
+    "linkedin": "https://www.linkedin.com/company/paayoor"
   }
 }
