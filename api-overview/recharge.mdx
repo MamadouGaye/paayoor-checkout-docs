@@ -1,9 +1,9 @@
 ---
 title: Recharge
-description: "Recharge Management"
+description: "Recharger le compte Paayoor"
 ---
 
-L'API Recharge vous permet de recharge le compte Paayoor via les différents cannaux disponibles.
+L'API Recharge permet de recharger le compte Paayoor via les différents cannaux disponibles.
 
 ## Flow
 
@@ -11,15 +11,13 @@ L'argent est débité du compte Mobile money / Bancaire pour le positionner dans
 
 ## Endpoints
 
-Vous avez les endpoints suivants qui sont disponibles:
-
-- Soumission d'une recharge ([API Référence](https://auth.paayoor.com/register))
-- Recupération de la liste des recharges ([API Référence](https://auth.paayoor.com/register))
+- Initier une recharge ([API Référence](https://auth.paayoor.com/register))
+- Recupérer la liste des recharges ([API Référence](https://auth.paayoor.com/register))
 - Voir les détails d'une recharge ([API Référence](https://auth.paayoor.com/register))
 
 ## cannaux disponibles
 
-Les canneaux disponibles pour recharge:
+Les canneaux disponibles pour Recharge:
 
 | Countries | Channels         |
 | --------- | ---------------- |
@@ -27,8 +25,8 @@ Les canneaux disponibles pour recharge:
 
 ## Webhook
 
-Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
-A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+Aprés initiation, différents évennements(Succeeded, Failed, Canceled) pourront survenir sur une opération de recharge. 
+A chaque évennement, nous enverrons une notification via le callback que vous aurez fourni.
 
 Ci-dessous le format JSON envoyé:
 

@@ -3,7 +3,7 @@ title: "Authentication"
 description: "Endpoint Security"
 ---
 
-Vous devriez disposer d'une paire de clés d'API que vous allez mettre en headers, comme indiqué ci-dessous, à chaque appel API.
+Vous devriez disposer d'une paire de clés d'API que vous allez fournir en headers, comme indiqué ci-dessous, à chaque appel API.
 
 ```bash
 'api-key': 'Api Key'
@@ -11,3 +11,5 @@ Vous devriez disposer d'une paire de clés d'API que vous allez mettre en header
 ```
 
 Ces clés vous donnent accès à tous ces endpoints disponibles sur la documentation.
+
+Toute paire de clé invalide entraine une réponse 401 Unauthorized.

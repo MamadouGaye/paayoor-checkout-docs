@@ -1,9 +1,9 @@
 ---
-title: Collect
-description: "Collect Management"
+title: Collecte
+description: "Collecter des fonds"
 ---
 
-L'API Collect vous permet de recevoir de l'argent via les différents cannaux disponibles.
+L'API Collecte permet de recevoir de l'argent via les différents cannaux disponibles.
 
 ## Flow
 
@@ -11,15 +11,13 @@ L'argent est débité du compte Mobile money / Bancaire pour le collecter au niv
 
 ## Endpoints
 
-Vous avez les endpoints suivants qui sont disponibles:
-
-- Soumission d'une collecte ([API Référence](https://auth.paayoor.com/register))
-- Recupération de la liste des collectes ([API Référence](https://auth.paayoor.com/register))
+- Initier une collecte ([API Référence](https://auth.paayoor.com/register))
+- Recupérer la liste des collectes ([API Référence](https://auth.paayoor.com/register))
 - Voir les détails d'une collecte ([API Référence](https://auth.paayoor.com/register))
 
 ## cannaux disponibles
 
-Les canneaux disponibles pour Collect:
+Les canneaux disponibles pour Collecte:
 
 | Countries | Channels         |
 | --------- | ---------------- |
@@ -27,8 +25,8 @@ Les canneaux disponibles pour Collect:
 
 ## Webhook
 
-Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
-A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+Aprés initiation, différents évennements(Succeeded, Failed, Canceled) pourront survenir sur une opération de collecte. 
+A chaque évennement, nous enverrons une notification via le callback que vous aurez fourni.
 
 Ci-dessous le format JSON envoyé:
 

@@ -1,9 +1,9 @@
 ---
-title: Disbursement
-description: "Disbursement Management"
+title: Déboursement
+description: "Débourser des fonds"
 ---
 
-L'API Disbursement vous permet d'envoyer de l'argent vers les différents cannaux disponibles.
+L'API Déboursement permet d'envoyer de l'argent vers les différents cannaux disponibles.
 
 ## Flow
 
@@ -11,15 +11,13 @@ L'argent est débité du compte Paayoor pour l'envoyer à un compte Mobile money
 
 ## Endpoints
 
-Vous avez les endpoints suivants qui sont disponibles:
-
-- Soumission d'un déboursement ([API Référence](https://auth.paayoor.com/register))
-- Recupération de la liste des déboursements ([API Référence](https://auth.paayoor.com/register))
+- Initier un déboursement ([API Référence](https://auth.paayoor.com/register))
+- Recupérer la liste des déboursements ([API Référence](https://auth.paayoor.com/register))
 - Voir les détails d'un déboursement ([API Référence](https://auth.paayoor.com/register))
 
 ## Cannaux disponibles
 
-Les canneaux disponibles pour Disbursement:
+Les canneaux disponibles pour Déboursement:
 
 | Countries | Channels         |
 | --------- | ---------------- |
@@ -27,8 +25,8 @@ Les canneaux disponibles pour Disbursement:
 
 ## Webhook
 
-Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
-A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+Aprés initiation, différents évennements(Succeeded, Failed, Canceled) pourront survenir sur une opération de déboursement. 
+A chaque évennement, nous enverrons une notification via le callback que vous aurez fourni.
 
 Ci-dessous le format JSON envoyé:
 

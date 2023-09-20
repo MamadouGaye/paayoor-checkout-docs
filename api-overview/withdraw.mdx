@@ -1,9 +1,9 @@
 ---
-title: Withdraw
-description: "Withdraw Management"
+title: Retrait
+description: "Retrier du compte Paayoor"
 ---
 
-L'API Withdraw vous permet de retirer de l'argent de son compte Paayoor vers les différents cannaux disponibles.
+L'API Retrait permet de retirer de l'argent de son compte Paayoor vers les différents cannaux disponibles.
 
 ## Flow
 
@@ -11,15 +11,13 @@ L'argent est débité du compte Paayoor pour l'envoyer à un compte Mobile money
 
 ## Endpoints
 
-Vous avez les endpoints suivants qui sont disponibles:
-
-- Soumission d'un retrait ([API Référence](https://auth.paayoor.com/register))
-- Recupération de la liste des retraits ([API Référence](https://auth.paayoor.com/register))
+- Initier un retrait ([API Référence](https://auth.paayoor.com/register))
+- Recupérer de la liste des retraits ([API Référence](https://auth.paayoor.com/register))
 - Voir les détails d'un retrait ([API Référence](https://auth.paayoor.com/register))
 
 ## Cannaux disponibles
 
-Les canneaux disponibles pour retrait:
+Les canneaux disponibles pour Retrait:
 
 | Countries | Channels         |
 | --------- | ---------------- |
@@ -27,8 +25,8 @@ Les canneaux disponibles pour retrait:
 
 ## Webhook
 
-Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
-A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+Aprés initiation, différents évennements(Succeeded, Failed, Canceled) pourront survenir sur une opération. 
+A chaque évennement, nous enverrons une notification via le callback que vous aurez fourni.
 
 Ci-dessous le format JSON envoyé:
 

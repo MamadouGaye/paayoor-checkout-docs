@@ -37,11 +37,11 @@
   "anchors": [],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Commencez",
       "pages": ["get-started/introduction", "get-started/quickstart"]
     },
     {
-      "group": "API Overview",
+      "group": "Présentation des APIs",
       "pages": ["api-overview/balance", "api-overview/collect", "api-overview/disbursement", "api-overview/transfer", "api-overview/recharge", "api-overview/withdraw", "api-overview/transaction"]
     },
     {

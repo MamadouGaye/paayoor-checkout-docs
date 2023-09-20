@@ -1,25 +1,23 @@
 ---
-title: Transfer
-description: "Transfer Management"
+title: Transfert
+description: "Transférer des fonds"
 ---
 
-L'API Transfer vous permet de transférer de l'argent d'un compte d'un canal disponible vers un autre compte d'un cannal disponible.
+L'API Transfer permet de transférer de l'argent d'un compte d'un canal disponible vers un autre compte d'un cannal disponible.
 
 ## Flow
 
-L'argent est débité du compte Mobile money / Bancaire emmeteur vers un compte Mobile money / Bancaire receveur.
+L'argent est transférer du compte Mobile money / Bancaire emmeteur vers un compte Mobile money / Bancaire receveur.
 
 ## Endpoints
 
-Vous avez les endpoints suivants qui sont disponibles:
-
-- Soumission d'un transfert ([API Référence](https://auth.paayoor.com/register))
-- Recupération de la liste des transferts ([API Référence](https://auth.paayoor.com/register))
+- Initier un transfert ([API Référence](https://auth.paayoor.com/register))
+- Recupérer la liste des transferts ([API Référence](https://auth.paayoor.com/register))
 - Voir les détails d'un transfert ([API Référence](https://auth.paayoor.com/register))
 
 ## Cannaux disponibles
 
-Les canneaux disponibles pour tranfert:
+Les canneaux disponibles pour Tranfert:
 
 | Countries | Channels Emetteurs                  | Channels Receveurs                  | 
 | --------- | ----------------------------------- | ----------------------------------- |
@@ -27,8 +25,8 @@ Les canneaux disponibles pour tranfert:
 
 ## Webhook
 
-Aprés initiation, différents evennements pourront survenir sur une opération(Succeeded, Failed, Canceled). 
-A chaque evennement, nous vous enverrons une notification via le callback que vous aurez fourni.
+Aprés initiation, différents évennements(Succeeded, Failed, Canceled) pourront survenir sur une opération de transfert. 
+A chaque évennement, nous enverrons une notification via le callback que vous aurez fourni.
 
 Ci-dessous le format JSON envoyé:
 
