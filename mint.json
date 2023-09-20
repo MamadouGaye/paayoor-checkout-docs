@@ -45,7 +45,7 @@
       "pages": ["api-overview/balance", "api-overview/collect", "api-overview/disbursement", "api-overview/transfer", "api-overview/recharge", "api-overview/withdraw", "api-overview/transaction"]
     },
     {
-      "group": "Essentials",
+      "group": "Essentiels",
       "pages": ["essentials/country", "essentials/channel", "essentials/environment", "essentials/response-code", "essentials/webhook"]
     },
     {
