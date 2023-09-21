@@ -14,7 +14,7 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ParamField body="from" type="object">
 
-  <Expandable title="Toggle object">
+  <Expandable title="Déplier">
 
     <ParamField body="amount" type="number" required></ParamField>
 
@@ -30,13 +30,17 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ParamField body="to" type="object" required>
 
-  <ParamField body="amount" type="number" required></ParamField>
+  <Expandable title="Déplier">
 
-  <ParamField body="channel" type="string" required></ParamField>
+    <ParamField body="amount" type="number" required></ParamField>
 
-  <ParamField body="country" type="string" required></ParamField>
+    <ParamField body="channel" type="string" required></ParamField>
 
-  <ParamField body="phoneNumber" type="string" required></ParamField>
+    <ParamField body="country" type="string" required></ParamField>
+
+    <ParamField body="phoneNumber" type="string" required></ParamField>
+
+  </Expandable>
 
 </ParamField>
 
@@ -64,11 +68,11 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ResponseField name="data" type="object">
 
-  <Expandable title="Toggle object">
+  <Expandable title="Déplier">
 
     <ResponseField name="transfer" type="object">
 
-      <Expandable title="Toggle object">
+      <Expandable title="Déplier">
 
         <ResponseField name="operation" type="string"></ResponseField>
 
@@ -80,13 +84,13 @@ description: "Cet endpoint permet d'initier un transfert"
 
         <ResponseField name="from" type="object">
 
-          <Expandable title="Toggle object">
+          <Expandable title="Déplier">
 
             <ResponseField name="amount" type="number"></ResponseField>
 
             <ResponseField name="pricing" type="object">
 
-              <Expandable title="Toggle object">
+              <Expandable title="Déplier">
 
                 <ResponseField name="percentageFee" type="number"></ResponseField>
 
@@ -110,13 +114,13 @@ description: "Cet endpoint permet d'initier un transfert"
 
         <ResponseField name="to" type="object">
 
-          <Expandable title="Toggle object">
+          <Expandable title="Déplier">
 
             <ResponseField name="amount" type="number"></ResponseField>
 
             <ResponseField name="pricing" type="object">
 
-              <Expandable title="Toggle object">
+              <Expandable title="Déplier">
 
                 <ResponseField name="percentageFee" type="number"></ResponseField>
 
