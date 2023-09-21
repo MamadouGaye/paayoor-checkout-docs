@@ -12,15 +12,19 @@ description: "Cet endpoint permet d'initier un transfert"
 
 ### Body
 
-<ParamField body="from" type="object" required>
+<ParamField body="from" type="object">
 
-  <ParamField body="amount" type="number" required></ParamField>
+  <Expandable title="Toggle object">
 
-  <ParamField body="channel" type="string" required></ParamField>
+    <ParamField body="amount" type="number" required></ParamField>
 
-  <ParamField body="country" type="string" required></ParamField>
+    <ParamField body="channel" type="string" required></ParamField>
 
-  <ParamField body="phoneNumber" type="string" required></ParamField>
+    <ParamField body="country" type="string" required></ParamField>
+
+    <ParamField body="phoneNumber" type="string" required></ParamField>
+
+  </Expandable>
 
 </ParamField>
 
