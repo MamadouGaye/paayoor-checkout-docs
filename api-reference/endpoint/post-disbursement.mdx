@@ -4,64 +4,112 @@ api: "POST https://api.checkout.paayoor.com/api/v1/disbursement"
 description: "Cet endpoint permet d'initier un déboursement"
 ---
 
+### Header
+
+<ParamField header="api-key" type="string" required></ParamField>
+
+<ParamField header="secret-key" type="string" required></ParamField>
+
 ### Body
 
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+<ParamField body="amount" type="number" required></ParamField>
+
+<ParamField body="channel" type="string" required></ParamField>
+
+<ParamField body="country" type="string" required></ParamField>
+
+<ParamField body="phoneNumber" type="string" required></ParamField>
+
+<ParamField body="merchantReference" type="string" required></ParamField>
+
+<ParamField body="pendingUrl" type="string"></ParamField>
+
+<ParamField body="succeededUrl" type="string"></ParamField>
+
+<ParamField body="failedUrl" type="string"></ParamField>
+
+<ParamField body="canceledUrl" type="string"></ParamField>
+
+<ParamField body="errorUrl" type="string"></ParamField>
+
+<ParamField body="callbackUrl" type="string" required></ParamField>
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
+<ResponseField name="success" type="boolean"></ResponseField>
 
-<ResponseField name="user_group" type="object">
+<ResponseField name="statusCode" type="number"></ResponseField>
 
-The contents of the user group
+<ResponseField name="message" type="string"></ResponseField>
 
-<Expandable title="Toggle object">
+<ResponseField name="data" type="object">
 
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
+  <Expandable title="Toggle object">
 
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
-</ResponseField>
+    <ResponseField name="disbursement" type="object">
 
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
+      <Expandable title="Toggle object">
 
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
+        <ResponseField name="operation" type="string"></ResponseField>
 
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
-</ResponseField>
+        <ResponseField name="token" type="string"></ResponseField>
 
-</Expandable>
+        <ResponseField name="status" type="string"></ResponseField>
+
+        <ResponseField name="redirectUrl" type="string"></ResponseField>
+
+        <ResponseField name="amount" type="number"></ResponseField>
+
+        <ResponseField name="pricing" type="object">
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="percentageFee" type="number"></ResponseField>
+
+            <ResponseField name="additionalFee" type="number"></ResponseField>
+
+            <ResponseField name="feesAmount" type="number"></ResponseField>
+
+            <ResponseField name="supportedByAccount" type="bollean"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="cashAmount" type="number"></ResponseField>
+
+        <ResponseField name="transactionAmount" type="number"></ResponseField>
+
+        <ResponseField name="merchantReference" type="string"></ResponseField>
+
+        <ResponseField name="initialDate" type="date"></ResponseField>
+
+      </Expandable>
+
+    </ResponseField>
+
+  </Expandable>
 
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "current_token": ""
+curl --location --request POST 'https://api.checkout.paayoor.com/api/v1/disbursement' \
+--header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
+--header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1' \
+--data '{
+    "amount": "",
+    "channel": "",
+    "country": "",
+    "phoneNumber": "",
+    "merchantReference": "",
+    "pendingUrl": "",
+    "succeededUrl": "",
+    "failedUrl": "",
+    "canceledUrl": "",
+    "errorUrl": "",
+    "callbackUrl": "",
 }'
 ```
 
@@ -71,12 +119,26 @@ curl --location --request POST 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
+  "success": true,
+  "statusCode": 200,
+  "message": "Disbursement !",
+  "data": {
+    "disbursement": {
+      "operation": "disbursement",
+      "token": "u0smo-xg3pq-ab4un-zjcjo-f0rlm",
+      "status": "succeeded",
+      "amount": 1000,
+      "pricing": {
+          "percentageFee": 1.8,
+          "additionalFee": 100,
+          "feesAmount": 120,
+          "supportedByAccount": true
+      },
+      "cashAmount": 1000,
+      "transactionAmount": 1120,
+      "merchantReference": "ifkjhiouefjeifjei",
+      "initiationDate": "2023-09-20T17:30:38.000000Z"
+    }
   }
 }
 ```

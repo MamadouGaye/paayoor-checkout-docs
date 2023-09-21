@@ -1,68 +1,167 @@
 ---
-title: "Transfer List"
-api: "GET https://api.checkout.product.paayoor.com/api/transfer"
-description: "This endpoint creates a new user"
+title: "Liste Transferts"
+api: "GET https://api.checkout.product.paayoor.com/api/v1/transfer"
+description: "Cet endpoint permet de récupérer la liste des transferts"
 ---
 
-### Body
+### Path
 
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
-</ParamField>
+<ParamField path="perPage" type="number" required></ParamField>
+
+<ParamField path="page" type="number" required></ParamField>
+
+### Headers
+
+<ParamField header="api-key" type="string" required></ParamField>
+
+<ParamField header="secret-key" type="string" required></ParamField>
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="success" type="boolean"></ResponseField>
+
+<ResponseField name="statusCode" type="number"></ResponseField>
+
+<ResponseField name="message" type="string"></ResponseField>
+
+<ResponseField name="data" type="object">
+
+  <Expandable title="Toggle object">
+
+    <ResponseField name="transfers" type="array">
+
+      <Expandable title="Toggle array">
+
+        <ResponseField name="operation" type="string"></ResponseField>
+
+        <ResponseField name="token" type="string"></ResponseField>
+
+        <ResponseField name="status" type="string"></ResponseField>
+
+        <ResponseField name="redirectUrl" type="string"></ResponseField>
+
+        <ResponseField name="from" type="object">
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="amount" type="number"></ResponseField>
+
+            <ResponseField name="pricing" type="object">
+
+              <Expandable title="Toggle object">
+
+                <ResponseField name="percentageFee" type="number"></ResponseField>
+
+                <ResponseField name="additionalFee" type="number"></ResponseField>
+
+                <ResponseField name="feesAmount" type="number"></ResponseField>
+
+                <ResponseField name="supportedByAccount" type="bollean"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
+
+            <ResponseField name="cashAmount" type="number"></ResponseField>
+
+            <ResponseField name="transactionAmount" type="bollean"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="to" type="object">
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="amount" type="number"></ResponseField>
+
+            <ResponseField name="pricing" type="object">
+
+              <Expandable title="Toggle object">
+
+                <ResponseField name="percentageFee" type="number"></ResponseField>
+
+                <ResponseField name="additionalFee" type="number"></ResponseField>
+
+                <ResponseField name="feesAmount" type="number"></ResponseField>
+
+                <ResponseField name="supportedByAccount" type="bollean"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
+
+            <ResponseField name="cashAmount" type="number"></ResponseField>
+
+            <ResponseField name="transactionAmount" type="bollean"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="merchantReference" type="string"></ResponseField>
+
+        <ResponseField name="initiationDate" type="date"></ResponseField>
+
+      </Expandable>
+
+      ...
+
+    </ResponseField>
+
+  </Expandable>
+
 </ResponseField>
 
-<ResponseField name="user_group" type="object">
+<ResponseField name="meta" type="object">
 
-The contents of the user group
+  <Expandable title="Toggle object">
 
-<Expandable title="Toggle object">
+    <ResponseField name="pagination" type="object">
 
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
+      <Expandable title="Toggle object">
 
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
-</ResponseField>
+        <ResponseField name="total" type="number"></ResponseField>
 
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
+        <ResponseField name="perPage" type="number"></ResponseField>
 
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
+        <ResponseField name="currentpage" type="number"></ResponseField>
 
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
-</ResponseField>
+        <ResponseField name="firstPage" type="number"></ResponseField>
 
-</Expandable>
+        <ResponseField name="firstPageUrl" type="number"></ResponseField>
+
+        <ResponseField name="pages" type="object">
+
+          <Expandable title="Toggle object">
+
+            <ResponseField name="number" type="url"></ResponseField>
+
+            ...
+
+          </Expandable>
+
+        </ResponseField>
+
+        <ResponseField name="lastPage" type="number"></ResponseField>
+
+        <ResponseField name="lastPageUrl" type="number"></ResponseField>
+
+      </Expandable>
+
+    </ResponseField>
+
+  </Expandable>
 
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "current_token": ""
-}'
+curl --location --request GET 'https://api.checkout.product.paayoor.com/api/v1/transfer' \
+--header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
+--header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1'
 ```
 
 </RequestExample>
@@ -71,12 +170,56 @@ curl --location --request POST 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
+  "success": true,
+  "statusCode": 200,
+  "message": "Transfers !",
+  "data": {
+    "transfers": [
+      {
+        "operation": "transfer",
+        "token": "paidj-zva9v-wgf1q-x8fi7-rtn9n",
+        "status": "succeeded",
+        "from": {
+          "amount": 1000,
+          "pricing": {
+            "percentageFee": 1.8,
+            "additionalFee": 100,
+            "feesAmount": 118,
+            "supportedByAccount": true
+          },
+          "cashAmount": 1000,
+          "transactionAmount": 882
+        },
+        "to": {
+          "amount": 1000,
+          "pricing": {
+            "percentageFee": 1.8,
+            "additionalFee": 100,
+            "feesAmount": 120,
+            "supportedByAccount": true
+          },
+          "cashAmount": 1000,
+          "transactionAmount": 1120
+        },
+        "merchantReference": "ikjiojidosdjiods",
+        "initiationDate": "2023-09-20T17:33:15.000000Z"
+      },
+      ...
+    ]
+  },
+  "meta": {
+    "pagination": {
+      "total": 1,
+      "perPage": 10,
+      "currentPage": 1,
+      "firstPage": 1,
+      "firstPageUrl": "https://api.checkout.paayoor.com/api/v1/transfer?page=1",
+      "pages": {
+          "1": "https://api.checkout.paayoor.com/api/v1/transfer?page=1"
+      },
+      "lastPage": 1,
+      "lastPageUrl": "https://api.checkout.paayoor.com/api/v1/transfer?page=1"
+    }
   }
 }
 ```
