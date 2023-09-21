@@ -14,7 +14,7 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ParamField body="from" type="object" required>
 
-  <Expandable title="Déplier">
+  <Expandable title="Content">
 
     <ParamField body="amount" type="number" required></ParamField>
 
@@ -30,7 +30,7 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ParamField body="to" type="object" required>
 
-  <Expandable title="Déplier">
+  <Expandable title="Content">
 
     <ParamField body="amount" type="number" required></ParamField>
 
@@ -68,11 +68,11 @@ description: "Cet endpoint permet d'initier un transfert"
 
 <ResponseField name="data" type="object">
 
-  <Expandable title="Déplier">
+  <Expandable title="Content">
 
     <ResponseField name="transfer" type="object">
 
-      <Expandable title="Déplier">
+      <Expandable title="Content">
 
         <ResponseField name="operation" type="string"></ResponseField>
 
@@ -84,13 +84,13 @@ description: "Cet endpoint permet d'initier un transfert"
 
         <ResponseField name="from" type="object">
 
-          <Expandable title="Déplier">
+          <Expandable title="Content">
 
             <ResponseField name="amount" type="number"></ResponseField>
 
             <ResponseField name="pricing" type="object">
 
-              <Expandable title="Déplier">
+              <Expandable title="Content">
 
                 <ResponseField name="percentageFee" type="number"></ResponseField>
 
@@ -114,13 +114,13 @@ description: "Cet endpoint permet d'initier un transfert"
 
         <ResponseField name="to" type="object">
 
-          <Expandable title="Déplier">
+          <Expandable title="Content">
 
             <ResponseField name="amount" type="number"></ResponseField>
 
             <ResponseField name="pricing" type="object">
 
-              <Expandable title="Déplier">
+              <Expandable title="Content">
 
                 <ResponseField name="percentageFee" type="number"></ResponseField>
 
