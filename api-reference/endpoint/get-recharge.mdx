@@ -60,6 +60,20 @@ description: "Cet endpoint permet de voir les détails d'une recharge"
 
         <ResponseField name="transactionAmount" type="number"></ResponseField>
 
+        <ResponseField name="customer" type="object">
+
+          <Expandable title="Content">
+
+            <ResponseField name="fullName" type="string"></ResponseField>
+
+            <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+            <ResponseField name="email" type="string"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
         <ResponseField name="merchantReference" type="string"></ResponseField>
 
         <ResponseField name="initialDate" type="date"></ResponseField>
@@ -96,13 +110,18 @@ curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/recharge/
       "status": "succeeded",
       "amount": 1000,
       "pricing": {
-          "percentageFee": 1.8,
-          "additionalFee": 100,
-          "feesAmount": 118,
-          "supportedByAccount": true
+        "percentageFee": 1.8,
+        "additionalFee": 100,
+        "feesAmount": 118,
+        "supportedByAccount": true
       },
       "cashAmount": 1000,
       "transactionAmount": 882,
+      "customer": {
+        "fullName": "Mamadou GAYE",
+        "phoneNumber": "778737478",
+        "email": "gayemama9@gmail.com"
+      },
       "merchantReference": "kiufjsknduifdnfz",
       "initiationDate": "2023-09-06T15:02:44.000000Z"
     }

@@ -64,6 +64,20 @@ description: "Cet endpoint permet de voir les détails d'un transfert"
 
             <ResponseField name="transactionAmount" type="bollean"></ResponseField>
 
+            <ResponseField name="customer" type="object">
+
+              <Expandable title="Content">
+
+                <ResponseField name="fullName" type="string"></ResponseField>
+
+                <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+                <ResponseField name="email" type="string"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
+
           </Expandable>
 
         </ResponseField>
@@ -93,6 +107,20 @@ description: "Cet endpoint permet de voir les détails d'un transfert"
             <ResponseField name="cashAmount" type="number"></ResponseField>
 
             <ResponseField name="transactionAmount" type="bollean"></ResponseField>
+
+            <ResponseField name="customer" type="object">
+
+              <Expandable title="Content">
+
+                <ResponseField name="fullName" type="string"></ResponseField>
+
+                <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+                <ResponseField name="email" type="string"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
 
           </Expandable>
 
@@ -141,7 +169,12 @@ curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/transfer/
           "supportedByAccount": true
         },
         "cashAmount": 1000,
-        "transactionAmount": 882
+        "transactionAmount": 882,
+        "customer": {
+          "fullName": "Mamadou GAYE",
+          "phoneNumber": "778737478",
+          "email": "gayemama9@gmail.com"
+        }
       },
       "to": {
         "amount": 1000,
@@ -152,7 +185,12 @@ curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/transfer/
           "supportedByAccount": true
         },
         "cashAmount": 1000,
-        "transactionAmount": 1120
+        "transactionAmount": 1120,
+        "customer": {
+          "fullName": "Mamadou GAYE",
+          "phoneNumber": "778737478",
+          "email": "gayemama9@gmail.com"
+        }
       },
       "merchantReference": "ikjiojidosdjiods",
       "initiationDate": "2023-09-20T17:33:15.000000Z"

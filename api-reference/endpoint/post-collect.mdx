@@ -18,7 +18,19 @@ description: "Cet endpoint permet d'initier une collecte"
 
 <ParamField body="country" type="string" required></ParamField>
 
-<ParamField body="phoneNumber" type="string" required></ParamField>
+<ParamField body="customer" type="object" required>
+
+  <Expandable title="Content">
+
+    <ParamField body="fullName" type="number"></ParamField>
+
+    <ParamField body="phoneNumber" type="string" required></ParamField>
+
+    <ParamField body="email" type="string"></ParamField>
+
+  </Expandable>
+
+</ParamField>
 
 <ParamField body="merchantReference" type="string" required></ParamField>
 
@@ -80,6 +92,20 @@ description: "Cet endpoint permet d'initier une collecte"
 
         <ResponseField name="transactionAmount" type="number"></ResponseField>
 
+        <ResponseField name="customer" type="object">
+
+          <Expandable title="Content">
+
+            <ResponseField name="fullName" type="string"></ResponseField>
+
+            <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+            <ResponseField name="email" type="string"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
         <ResponseField name="merchantReference" type="string"></ResponseField>
 
         <ResponseField name="initialDate" type="date"></ResponseField>
@@ -99,17 +125,21 @@ curl --location --request POST 'https://api.checkout.product.paayoor.com/api/v1/
 --header 'api-key: 75gJfowm010du0Nw2vwGZ150OoxhWJyz7vP0jM8Je6XFhtz0fk' \
 --header 'secret-key: 7cJofndFd5I5jMtICp6FFOGiTudpQwn661OZVTT7w63npl7lJ1' \
 --data '{
-    "amount": "",
-    "channel": "",
-    "country": "",
+  "amount": "",
+  "channel": "",
+  "country": "",
+  "customer": {
+    "fullName": "",
     "phoneNumber": "",
-    "merchantReference": "",
-    "pendingUrl": "",
-    "succeededUrl": "",
-    "failedUrl": "",
-    "canceledUrl": "",
-    "errorUrl": "",
-    "callbackUrl": "",
+    "email": ""
+  },
+  "merchantReference": "",
+  "pendingUrl": "",
+  "succeededUrl": "",
+  "failedUrl": "",
+  "canceledUrl": "",
+  "errorUrl": "",
+  "callbackUrl": ""
 }'
 ```
 
@@ -129,13 +159,18 @@ curl --location --request POST 'https://api.checkout.product.paayoor.com/api/v1/
       "status": "succeeded",
       "amount": 1000,
       "pricing": {
-          "percentageFee": 1.8,
-          "additionalFee": 100,
-          "feesAmount": 118,
-          "supportedByAccount": true
+        "percentageFee": 1.8,
+        "additionalFee": 100,
+        "feesAmount": 118,
+        "supportedByAccount": true
       },
       "cashAmount": 1000,
       "transactionAmount": 882,
+      "customer": {
+        "fullName": "Mamadou GAYE",
+        "phoneNumber": "778737478",
+        "email": "gayemama9@gmail.com"
+      },
       "merchantReference": "kiufjsknduifdnfz",
       "initiationDate": "2023-09-06T15:03:45.000000Z"
     }

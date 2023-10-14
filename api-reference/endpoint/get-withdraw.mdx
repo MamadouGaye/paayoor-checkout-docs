@@ -60,6 +60,20 @@ description: "Cet endpoint permet de voir les détails d'un retrait"
 
         <ResponseField name="transactionAmount" type="number"></ResponseField>
 
+        <ResponseField name="customer" type="object">
+
+          <Expandable title="Content">
+
+            <ResponseField name="fullName" type="string"></ResponseField>
+
+            <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+            <ResponseField name="email" type="string"></ResponseField>
+
+          </Expandable>
+
+        </ResponseField>
+
         <ResponseField name="merchantReference" type="string"></ResponseField>
 
         <ResponseField name="initiationDate" type="date"></ResponseField>
@@ -103,6 +117,11 @@ curl --location --request GET 'https://api.checkout.paayoor.com/api/v1/withdraw/
       },
       "cashAmount": 1000,
       "transactionAmount": 1120,
+      "customer": {
+        "fullName": "Mamadou GAYE",
+        "phoneNumber": "778737478",
+        "email": "gayemama9@gmail.com"
+      },
       "merchantReference": "djkfiunfiudzjfn",
       "initiationDate": "2023-09-20T17:32:03.000000Z"
     }

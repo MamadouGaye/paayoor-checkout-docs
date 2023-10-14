@@ -22,7 +22,19 @@ description: "Cet endpoint permet d'initier un transfert"
 
     <ParamField body="country" type="string" required></ParamField>
 
-    <ParamField body="phoneNumber" type="string" required></ParamField>
+    <ParamField body="customer" type="object" required>
+
+      <Expandable title="Content">
+
+        <ParamField body="fullName" type="number"></ParamField>
+
+        <ParamField body="phoneNumber" type="string" required></ParamField>
+
+        <ParamField body="email" type="string"></ParamField>
+
+      </Expandable>
+
+    </ParamField>
 
   </Expandable>
 
@@ -38,7 +50,19 @@ description: "Cet endpoint permet d'initier un transfert"
 
     <ParamField body="country" type="string" required></ParamField>
 
-    <ParamField body="phoneNumber" type="string" required></ParamField>
+    <ParamField body="customer" type="object" required>
+
+      <Expandable title="Content">
+
+        <ParamField body="fullName" type="number"></ParamField>
+
+        <ParamField body="phoneNumber" type="string" required></ParamField>
+
+        <ParamField body="email" type="string"></ParamField>
+
+      </Expandable>
+
+    </ParamField>
 
   </Expandable>
 
@@ -108,6 +132,20 @@ description: "Cet endpoint permet d'initier un transfert"
 
             <ResponseField name="transactionAmount" type="bollean"></ResponseField>
 
+            <ResponseField name="customer" type="object">
+
+              <Expandable title="Content">
+
+                <ResponseField name="fullName" type="string"></ResponseField>
+
+                <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+                <ResponseField name="email" type="string"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
+
           </Expandable>
 
         </ResponseField>
@@ -138,6 +176,20 @@ description: "Cet endpoint permet d'initier un transfert"
 
             <ResponseField name="transactionAmount" type="bollean"></ResponseField>
 
+            <ResponseField name="customer" type="object">
+
+              <Expandable title="Content">
+
+                <ResponseField name="fullName" type="string"></ResponseField>
+
+                <ResponseField name="phoneNumber" type="string"></ResponseField>
+
+                <ResponseField name="email" type="string"></ResponseField>
+
+              </Expandable>
+
+            </ResponseField>
+
           </Expandable>
 
         </ResponseField>
@@ -165,13 +217,21 @@ curl --location --request POST 'https://api.checkout.paayoor.com/api/v1/transfer
       "amount": "",
       "channel": "",
       "country": "",
-      "phoneNumber": "",
+      "customer": {
+        "fullName": "",
+        "phoneNumber": "",
+        "email": ""
+      }
     },
     "to": {
       "amount": "",
       "channel": "",
       "country": "",
-      "phoneNumber": "",
+      "customer": {
+        "fullName": "",
+        "phoneNumber": "",
+        "email": ""
+      }
     },
     "merchantReference": "",
     "pendingUrl": "",
@@ -179,7 +239,7 @@ curl --location --request POST 'https://api.checkout.paayoor.com/api/v1/transfer
     "failedUrl": "",
     "canceledUrl": "",
     "errorUrl": "",
-    "callbackUrl": "",
+    "callbackUrl": ""
 }'
 ```
 
@@ -206,7 +266,12 @@ curl --location --request POST 'https://api.checkout.paayoor.com/api/v1/transfer
           "supportedByAccount": true
         },
         "cashAmount": 1000,
-        "transactionAmount": 882
+        "transactionAmount": 882,
+        "customer": {
+          "fullName": "Mamadou GAYE",
+          "phoneNumber": "778737478",
+          "email": "gayemama9@gmail.com"
+        }
       },
       "to": {
         "amount": 1000,
@@ -217,7 +282,12 @@ curl --location --request POST 'https://api.checkout.paayoor.com/api/v1/transfer
           "supportedByAccount": true
         },
         "cashAmount": 1000,
-        "transactionAmount": 1120
+        "transactionAmount": 1120,
+        "customer": {
+          "fullName": "Mamadou GAYE",
+          "phoneNumber": "778737478",
+          "email": "gayemama9@gmail.com"
+        }
       },
       "merchantReference": "ikjiojidosdjiods",
       "initiationDate": "2023-09-20T17:33:15.000000Z"
